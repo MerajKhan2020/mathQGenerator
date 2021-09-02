@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane prefHeight="705.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane prefHeight="705.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="506.0">
          <children>
@@ -30,10 +29,10 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="correctAns1" layoutX="152.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" />
-            <Text fx:id="correctAns2" layoutX="152.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" AnchorPane.bottomAnchor="254.0" />
-            <Text fx:id="correctAns3" layoutX="159.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" AnchorPane.bottomAnchor="82.0" />
-            <Button fx:id="resetBttn" layoutX="334.0" layoutY="601.0" mnemonicParsing="false" text="Reset" />
+            <Text fx:id="correctAns1" layoutX="167.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" />
+            <Text fx:id="correctAns2" layoutX="152.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" />
+            <Text fx:id="correctAns3" layoutX="152.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" />
+            <Button fx:id="resetBttn" layoutX="292.0" layoutY="602.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" text="Reset" />
             <Text fx:id="BooleanDisplay1" layoutX="293.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" />
             <Text fx:id="BooleanDisplay2" layoutX="293.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" />
             <Text fx:id="BooleanDisplay3" layoutX="293.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     " wrappingWidth="81.54443359375" />
