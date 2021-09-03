@@ -6,6 +6,7 @@ import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class qGeneratorController {
     public ScrollPane mathBoard;
@@ -27,27 +28,45 @@ public class qGeneratorController {
     public Button showAnswerBttn3;
     public Button resetBttn;
 
-
-    public int topNumber;
-    public int bottomNumber;
     public int answer;
-    public List list = new ArrayList<>(9);
+    public ArrayList list = new ArrayList<>(9);
 
     public List<Integer> mathQuestionGenerator (){
-        int i=0;
-        while (i<list.size()) {
-            topNumber = (int) (Math.random() * 100);
-            bottomNumber = (int) (Math.random() * 10);
-            list.add(topNumber);
-            list.add(bottomNumber);
-            list.add(topNumber * bottomNumber);
+        for (int i=0;i<=3;i++){
+            int a = topNumberGenerator(100,999);
+            list.add(a);
+            int b = bottomNumberGenerator(10,99);
+            list.add(b);
+            list.add(a*b);
         }
         return list;
     }
 
+    public int topNumberGenerator (int min, int max){
+        System.out.println("Random value in int from "+min+" to "+max+ ":");
+        int topNumber = (int)Math.floor(Math.random()*(max-min+1)+min);
+        System.out.println(topNumber);
+        return topNumber;
+    }
+
+    public int bottomNumberGenerator (int min, int max){
+        System.out.println("Random value in int from "+min+" to "+max+ ":");
+        int bottomNumber = (int)Math.floor(Math.random()*(max-min+1)+min);
+        System.out.println(bottomNumber);
+        return bottomNumber;
+    }
+
     public void generateQController(ActionEvent event) {
         System.out.println("generateQButton Button was pressed");
-
+        mathQuestionGenerator();
+        for (int j = 0; j < list.size();j++)
+        {
+            System.out.println(list.get(j));
+        }
+        System.out.println(list);
+        questionBox1.setText(list.get(0) + " X " + list.get(1));
+        questionBox2.setText(list.get(3) + " X " + list.get(4));
+        questionBox3.setText(list.get(6) + " X " + list.get(7));
     }
 
     public void showAnswerController1 (ActionEvent event) {
@@ -67,7 +86,19 @@ public class qGeneratorController {
 
     public void resetController (ActionEvent event) {
         System.out.println("Reset Button was pressed");
-
+        questionBox1.clear();
+        questionBox2.clear();
+        questionBox3.clear();
+        answerBox1.clear();
+        answerBox2.clear();
+        answerBox3.clear();
+        booleanDisplay1.setText(" ");
+        booleanDisplay2.setText(" ");
+        booleanDisplay3.setText(" ");
+        correctAns1.setText(" ");
+        correctAns2.setText(" ");
+        correctAns3.setText(" ");
+        list.clear();
     }
 
 }
