@@ -32,7 +32,7 @@ public class qGeneratorController {
     public ArrayList list = new ArrayList<>(9);
 
     public List<Integer> mathQuestionGenerator (){
-        for (int i=0;i<=3;i++){
+        for (int i=0;i<=2;i++){
             int a = topNumberGenerator(100,999);
             list.add(a);
             int b = bottomNumberGenerator(10,99);
@@ -71,18 +71,44 @@ public class qGeneratorController {
 
     public void showAnswerController1 (ActionEvent event) {
         System.out.println("Show answer 1 Button was pressed");
+        correctAns1.setText(list.get(2).toString());
 
     }
 
     public void showAnswerController2 (ActionEvent event) {
         System.out.println("Show answer 2 Button was pressed");
-
+        correctAns2.setText(list.get(5).toString());
     }
 
     public void showAnswerController3 (ActionEvent event) {
         System.out.println("Show answer 3 Button was pressed");
-
+        correctAns3.setText(list.get(8).toString());
     }
+
+    public void answerBox1Controller (ActionEvent event) {
+        System.out.println("Answer in Box 1 has been enetered");
+        //correctAns3.setText(list.get(8).toString());
+        int answer1 = Integer.parseInt(answerBox1.getText());
+        if (answer1 == Integer.parseInt(list.get(2).toString())) {
+            booleanDisplay1.setText("Correct");
+        }else {
+                booleanDisplay1.setText("Wrong Answer");
+            }
+
+        }
+
+
+
+    public void answerBox2Controller (ActionEvent event) {
+        System.out.println("Answer in Box 2 has been enetered");
+        //correctAns3.setText(list.get(8).toString());
+    }
+
+    public void answerBox3Controller (ActionEvent event) {
+        System.out.println("Answer in Box 3 has been enetered");
+        //correctAns3.setText(list.get(8).toString());
+    }
+
 
     public void resetController (ActionEvent event) {
         System.out.println("Reset Button was pressed");

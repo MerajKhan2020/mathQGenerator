@@ -12,7 +12,7 @@
             <Text layoutX="29.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 1:" wrappingWidth="116.6708984375" />
             <Text layoutX="29.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 2:" wrappingWidth="116.6708984375" />
             <Text layoutX="29.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 3:" wrappingWidth="116.6708984375" />
-            <TextArea fx:id="answerBox1" layoutX="26.0" layoutY="154.0" prefHeight="36.0" prefWidth="223.0" promptText="Type your answer here" />
+            <TextArea fx:id="answerBox1" layoutX="26.0" layoutY="154.0" onInputMethodTextChanged="#showAnswerController1" prefHeight="36.0" prefWidth="223.0" promptText="Type your answer here" />
             <TextArea fx:id="answerBox2" layoutX="30.0" layoutY="338.0" prefHeight="36.0" prefWidth="223.0" promptText="Type your answer here" />
             <TextArea fx:id="answerBox3" layoutX="26.0" layoutY="531.0" prefHeight="36.0" prefWidth="223.0" promptText="Type your answer here" />
             <Text layoutX="32.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct Answer: " wrappingWidth="122.6708984375" />
