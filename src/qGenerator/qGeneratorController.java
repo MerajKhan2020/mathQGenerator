@@ -92,13 +92,18 @@ public class qGeneratorController {
         System.out.println("Show answer 1 Button was pressed");
 
 
-        if (questionBox1.getText().isEmpty() && answerBox1.getText().isEmpty() && answerBox3.getText().isEmpty() && answerBox3.getText().isEmpty()) {
+        if (questionBox1.getText().isEmpty() || answerBox1.getText().isEmpty() || answerBox3.getText().isEmpty() || answerBox3.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please click on Generate Math question button and " +"\n"+"fill out all the answers before clicking on Show Answer Button", ButtonType.OK);
             alert.showAndWait();
-        }else if(answerBox1.getText().isEmpty() && answerBox3.getText().isEmpty() && answerBox3.getText().isEmpty())
+        }else if(answerBox1.getText().isEmpty() || answerBox3.getText().isEmpty() || answerBox3.getText().isEmpty())
         {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please fill out all the answers", ButtonType.OK);
-                alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please fill out all the answers", ButtonType.OK);
+            alert.showAndWait();
+        }else if(isInteger(answerBox1.getText())==false || isInteger(answerBox2.getText())==false  || isInteger(answerBox3.getText())==false )
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please enter numbers only", ButtonType.OK);
+            alert.showAndWait();
+
         } else {
             correctAns1.setText(list.get(2).toString());
             correctAns2.setText(list.get(5).toString());
@@ -128,12 +133,10 @@ public class qGeneratorController {
             }
 
             if (answer3 == Integer.parseInt(list.get(8).toString())) {
-                //booleanDisplay3.setText("Correct");
                 booleanDisplay3.setStyle("-fx-text-fill: green");
                 answerBox3.setStyle("-fx-text-fill: green");
                 booleanDisplay3.setText("Correct");
             } else {
-                //booleanDisplay3.setText("Wrong Answer");
                 booleanDisplay3.setStyle("-fx-text-fill: red");
                 answerBox3.setStyle("-fx-text-fill: red");
                 booleanDisplay3.setText("Wrong Answer");
@@ -141,41 +144,6 @@ public class qGeneratorController {
 
         }
     }
-
-
-/*    public void showAnswerController2 (ActionEvent event) {
-        System.out.println("Show answer 2 Button was pressed");
-
-    }
-
-    public void showAnswerController3 (ActionEvent event) {
-        System.out.println("Show answer 3 Button was pressed");
-
-    }
-
-    public void answerBox1Controller (ActionEvent event) {
-        System.out.println("Answer in Box 1 has been enetered");
-        //correctAns3.setText(list.get(8).toString());
-        int answer1 = Integer.parseInt(answerBox1.getText());
-        if (answer1 == Integer.parseInt(list.get(2).toString())) {
-            booleanDisplay1.setText("Correct");
-        }else {
-                booleanDisplay1.setText("Wrong Answer");
-            }
-
-        }
-
-
-
-    public void answerBox2Controller (ActionEvent event) {
-        System.out.println("Answer in Box 2 has been enetered");
-        //correctAns3.setText(list.get(8).toString());
-    }
-
-    public void answerBox3Controller (ActionEvent event) {
-        System.out.println("Answer in Box 3 has been enetered");
-        //correctAns3.setText(list.get(8).toString());
-    }*/
 
 
     public void resetController (ActionEvent event) {
@@ -197,6 +165,17 @@ public class qGeneratorController {
         correctAns2.setText("");
         correctAns3.setText("");
         list.clear();
+    }
+
+
+    public boolean isInteger( String input ) {
+        try {
+            Integer.parseInt( input );
+            return true;
+        }
+        catch( Exception e ) {
+            return false;
+        }
     }
 
 }

@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane id="group-view" fx:id="mathBoard" prefHeight="753.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qGenerator.qGeneratorController">
+<ScrollPane id="group-view" fx:id="mathBoard" prefHeight="753.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qGenerator.qGeneratorController">
    <content>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="506.0">
+      <AnchorPane id="background" fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="506.0" styleClass="background" stylesheets="@Stylesheets.css">
          <children>
-            <ImageView fitHeight="753.0" fitWidth="515.0" layoutX="-3.0" layoutY="-1.0">
-               <image>
-                  <Image url="@../../BackgroundImage/MathWallpaper.jpg" />
-               </image>
-            </ImageView>
             <Text fontSmoothingType="LCD" layoutX="29.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 1:" wrappingWidth="116.6708984375">
                <font>
                   <Font name="Segoe UI Bold Italic" size="16.0" />
@@ -58,9 +51,18 @@
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font></Button>
-            <Label fx:id="correctAns1" layoutX="159.0" layoutY="209.0" prefHeight="21.0" prefWidth="97.0" />
-            <Label fx:id="correctAns3" layoutX="159.0" layoutY="595.0" prefHeight="21.0" prefWidth="97.0" />
-            <Label fx:id="correctAns2" layoutX="169.0" layoutY="403.0" prefHeight="21.0" prefWidth="97.0" />
+            <Label fx:id="correctAns1" layoutX="159.0" layoutY="209.0" prefHeight="21.0" prefWidth="97.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="correctAns3" layoutX="159.0" layoutY="595.0" prefHeight="21.0" prefWidth="97.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="correctAns2" layoutX="169.0" layoutY="403.0" prefHeight="21.0" prefWidth="97.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
             <Label fx:id="booleanDisplay1" layoutX="294.0" layoutY="162.0" prefHeight="21.0" prefWidth="97.0" />
             <Label fx:id="booleanDisplay2" layoutX="294.0" layoutY="346.0" prefHeight="21.0" prefWidth="97.0" />
             <Label fx:id="booleanDisplay3" layoutX="294.0" layoutY="548.0" prefHeight="21.0" prefWidth="97.0" />
