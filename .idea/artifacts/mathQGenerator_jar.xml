@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="mathQGenerator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mathQGenerator_jar</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="qGenerator.Main" />
+        <option name="convertCss2Bin" value="true" />
+        <option name="description" value="" />
+        <option name="height" value="746" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/qGenerator/icon.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="Math Q Generator" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+        <option name="width" value="504" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="mathQGenerator.jar">
+        <element id="module-output" name="mathQGenerator" />
+      </element>
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>
