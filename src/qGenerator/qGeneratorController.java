@@ -2,11 +2,9 @@ package qGenerator;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class qGeneratorController {
     public ScrollPane mathBoard;
@@ -27,11 +25,45 @@ public class qGeneratorController {
     //public Button showAnswerBttn2;
     //public Button showAnswerBttn3;
     public Button resetBttn;
+    public RadioButton radioButtonMultiply, radioButtonDivision, radioButtonAddition, radioButtonDeduction;
 
     public int answer;
     public ArrayList list = new ArrayList<>(9);
 
-    public List<Integer> mathQuestionGenerator (){
+    public List<Integer> multiplyQGenerator(){
+        for (int i=0;i<=2;i++){
+            int a = topNumberGenerator(100,999);
+            list.add(a);
+            int b = bottomNumberGenerator(10,99);
+            list.add(b);
+            list.add(a*b);
+        }
+        return list;
+    }
+
+    public List<Integer> divisionQGenerator(){
+        for (int i=0;i<=2;i++){
+            int a = topNumberGenerator(100,999);
+            list.add(a);
+            int b = bottomNumberGenerator(10,99);
+            list.add(b);
+            list.add(a*b);
+        }
+        return list;
+    }
+
+    public List<Integer> additionQGenerator(){
+        for (int i=0;i<=2;i++){
+            int a = topNumberGenerator(100,999);
+            list.add(a);
+            int b = bottomNumberGenerator(10,99);
+            list.add(b);
+            list.add(a*b);
+        }
+        return list;
+    }
+
+    public List<Integer> deductionQGenerator(){
         for (int i=0;i<=2;i++){
             int a = topNumberGenerator(100,999);
             list.add(a);
@@ -77,7 +109,7 @@ public class qGeneratorController {
         list.clear();
 
         System.out.println("generateQButton Button was pressed");
-        mathQuestionGenerator();
+        multiplyQGenerator();
         for (int j = 0; j < list.size();j++)
         {
             System.out.println(list.get(j));
@@ -177,5 +209,24 @@ public class qGeneratorController {
             return false;
         }
     }
+
+    public void radioButtonDeductionController (ActionEvent event) {
+        System.out.println("Deduction");
+    }
+
+    public void radioButtonAdditionController (ActionEvent event) {
+        System.out.println("Addtion");
+    }
+
+    public void radioButtonMultiplyController (ActionEvent event) {
+        System.out.println("Multiply");
+    }
+
+    public void radioButtonDivisionController (ActionEvent event) {
+        System.out.println("Division");
+    }
+
+
+
 
 }
