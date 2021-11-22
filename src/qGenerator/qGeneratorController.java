@@ -22,8 +22,6 @@ public class qGeneratorController {
     public Label correctAns3;
     public Button generateQButton;
     public Button showAnswerBttn;
-    //public Button showAnswerBttn2;
-    //public Button showAnswerBttn3;
     public Button resetBttn;
     public RadioButton radioButtonMultiply, radioButtonDivision, radioButtonAddition, radioButtonDeduction;
 
@@ -45,31 +43,35 @@ public class qGeneratorController {
         for (int i=0;i<=2;i++){
             int a = topNumberGenerator(100,999);
             list.add(a);
-            int b = bottomNumberGenerator(10,99);
+            int b = bottomNumberGenerator(2,9);
             list.add(b);
-            list.add(a*b);
+            list.add(a/b);
         }
         return list;
     }
 
     public List<Integer> additionQGenerator(){
         for (int i=0;i<=2;i++){
-            int a = topNumberGenerator(100,999);
+            int a = topNumberGenerator(1000,9999);
             list.add(a);
-            int b = bottomNumberGenerator(10,99);
+            int b = bottomNumberGenerator(10,9999);
             list.add(b);
-            list.add(a*b);
+            list.add(a+b);
         }
         return list;
     }
 
     public List<Integer> deductionQGenerator(){
         for (int i=0;i<=2;i++){
-            int a = topNumberGenerator(100,999);
+            int a = topNumberGenerator(10,9999);
             list.add(a);
-            int b = bottomNumberGenerator(10,99);
+            int b = bottomNumberGenerator(1,9999);
             list.add(b);
-            list.add(a*b);
+            if (b>a){
+                list.add(b-a);
+            }else {
+                list.add(a-b);
+            }
         }
         return list;
     }
@@ -89,7 +91,6 @@ public class qGeneratorController {
     }
 
     public void generateQController(ActionEvent event) {
-
         questionBox1.clear();
         questionBox2.clear();
         questionBox3.clear();
@@ -109,16 +110,80 @@ public class qGeneratorController {
         list.clear();
 
         System.out.println("generateQButton Button was pressed");
-        multiplyQGenerator();
-        for (int j = 0; j < list.size();j++)
-        {
-            System.out.println(list.get(j));
+        if (radioButtonMultiply.isSelected()){
+            multiplyQGenerator();
+            for (int j = 0; j < list.size();j++)
+            {
+                System.out.println(list.get(j));
+            }
+            System.out.println(list);
+            questionBox1.setText(list.get(0) + " X " + list.get(1));
+            questionBox2.setText(list.get(3) + " X " + list.get(4));
+            questionBox3.setText(list.get(6) + " X " + list.get(7));
+
+        } else if(radioButtonDeduction.isSelected()){
+            deductionQGenerator();
+            for (int j = 0; j < list.size();j++)
+            {
+                System.out.println(list.get(j));
+            }
+            int x = Integer.parseInt((list.get(0).toString()));
+            int y = Integer.parseInt((list.get(1).toString()));
+            int z = Integer.parseInt((list.get(3).toString()));
+            int a = Integer.parseInt((list.get(4).toString()));
+            int b = Integer.parseInt((list.get(6).toString()));
+            int c = Integer.parseInt((list.get(7).toString()));
+
+            System.out.println(list);
+            if (x>y){
+                questionBox1.setText(list.get(0) + " - " + list.get(1));
+            }else{
+                questionBox1.setText(list.get(1) + " - " + list.get(0));
+            }
+
+            if (z>a){
+                questionBox2.setText(list.get(3) + " - " + list.get(4));
+            }else{
+                questionBox2.setText(list.get(4) + " - " + list.get(3));
+            }
+
+            if (b>c){
+                questionBox3.setText(list.get(6) + " - " + list.get(7));
+            }else{
+                questionBox3.setText(list.get(7) + " - " + list.get(6));
+            }
+
+/*            questionBox1.setText(list.get(0) + " + " + list.get(1));
+            questionBox2.setText(list.get(3) + " + " + list.get(4));
+            questionBox3.setText(list.get(6) + " + " + list.get(7));*/
+
+        } else if(radioButtonAddition.isSelected()){
+            additionQGenerator();
+            for (int j = 0; j < list.size();j++)
+            {
+                System.out.println(list.get(j));
+            }
+            System.out.println(list);
+            questionBox1.setText(list.get(0) + " + " + list.get(1));
+            questionBox2.setText(list.get(3) + " + " + list.get(4));
+            questionBox3.setText(list.get(6) + " + " + list.get(7));
+
+        } else if(radioButtonDivision.isSelected()){
+            divisionQGenerator();
+            for (int j = 0; j < list.size();j++)
+            {
+                System.out.println(list.get(j));
+            }
+            System.out.println(list);
+            questionBox1.setText(list.get(0) + " ÷ " + list.get(1));
+            questionBox2.setText(list.get(3) + " ÷ " + list.get(4));
+            questionBox3.setText(list.get(6) + " ÷ " + list.get(7));
+
         }
-        System.out.println(list);
-        questionBox1.setText(list.get(0) + " X " + list.get(1));
-        questionBox2.setText(list.get(3) + " X " + list.get(4));
-        questionBox3.setText(list.get(6) + " X " + list.get(7));
+
     }
+
+
 
     public void showAnswerController (ActionEvent event) {
         System.out.println("Show answer 1 Button was pressed");
@@ -137,9 +202,9 @@ public class qGeneratorController {
             alert.showAndWait();
 
         } else {
-            correctAns1.setText(list.get(2).toString());
-            correctAns2.setText(list.get(5).toString());
-            correctAns3.setText(list.get(8).toString());
+            correctAns1.setText("Correct Answer: " + list.get(2).toString());
+            correctAns2.setText("Correct Answer: " + list.get(5).toString());
+            correctAns3.setText("Correct Answer: " + list.get(8).toString());
             int answer1 = Integer.parseInt(answerBox1.getText());
             int answer2 = Integer.parseInt(answerBox2.getText());
             int answer3 = Integer.parseInt(answerBox3.getText());

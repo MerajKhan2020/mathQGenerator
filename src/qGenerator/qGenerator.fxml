@@ -24,18 +24,6 @@
             <TextArea fx:id="answerBox1" layoutX="26.0" layoutY="230.0" prefHeight="36.0" prefWidth="223.0" promptText="Type your answer here" />
             <TextArea fx:id="answerBox2" layoutX="26.0" layoutY="396.0" prefHeight="36.0" prefWidth="223.0" promptText="Type your answer here" />
             <TextArea fx:id="answerBox3" layoutX="26.0" layoutY="559.0" prefHeight="36.0" prefWidth="223.0" promptText="Type your answer here" />
-            <Text fontSmoothingType="LCD" layoutX="32.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct Answer: " wrappingWidth="122.6708984375">
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font></Text>
-            <Text fontSmoothingType="LCD" layoutX="32.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct Answer: " wrappingWidth="122.6708984375">
-               <font>
-                  <Font name="Segoe UI" size="16.0" />
-               </font></Text>
-            <Text fontSmoothingType="LCD" layoutX="26.0" layoutY="622.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct Answer: " wrappingWidth="122.6708984375">
-               <font>
-                  <Font size="16.0" />
-               </font></Text>
             <TextField fx:id="questionBox1" editable="false" layoutX="26.0" layoutY="183.0" prefHeight="31.0" prefWidth="223.0" />
             <TextField fx:id="questionBox2" editable="false" layoutX="26.0" layoutY="352.0" prefHeight="31.0" prefWidth="223.0" />
             <TextField fx:id="questionBox3" editable="false" layoutX="26.0" layoutY="517.0" prefHeight="31.0" prefWidth="223.0" />
@@ -51,21 +39,21 @@
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font></Button>
-            <Label fx:id="correctAns1" layoutX="159.0" layoutY="209.0" prefHeight="21.0" prefWidth="97.0">
+            <Label fx:id="correctAns1" layoutX="26.0" layoutY="283.0" prefHeight="22.0" prefWidth="224.0">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Label>
-            <Label fx:id="correctAns3" layoutX="159.0" layoutY="595.0" prefHeight="21.0" prefWidth="97.0">
+            <Label fx:id="correctAns3" layoutX="26.0" layoutY="609.0" prefHeight="22.0" prefWidth="223.0">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Label>
-            <Label fx:id="correctAns2" layoutX="169.0" layoutY="403.0" prefHeight="21.0" prefWidth="97.0">
+            <Label fx:id="correctAns2" layoutX="26.0" layoutY="446.0" prefHeight="22.0" prefWidth="223.0">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Label>
-            <Label fx:id="booleanDisplay1" layoutX="294.0" layoutY="162.0" prefHeight="21.0" prefWidth="97.0" />
-            <Label fx:id="booleanDisplay2" layoutX="294.0" layoutY="346.0" prefHeight="21.0" prefWidth="97.0" />
-            <Label fx:id="booleanDisplay3" layoutX="294.0" layoutY="548.0" prefHeight="21.0" prefWidth="97.0" />
+            <Label fx:id="booleanDisplay1" layoutX="276.0" layoutY="238.0" prefHeight="21.0" prefWidth="97.0" />
+            <Label fx:id="booleanDisplay2" layoutX="284.0" layoutY="404.0" prefHeight="21.0" prefWidth="97.0" />
+            <Label fx:id="booleanDisplay3" layoutX="284.0" layoutY="567.0" prefHeight="21.0" prefWidth="97.0" />
             <RadioButton fx:id="radioButtonAddition" layoutX="26.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonAdditionController" text="Addition">
                <toggleGroup>
                   <ToggleGroup fx:id="mathQ" />
