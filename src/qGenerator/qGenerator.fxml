@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane id="group-view" fx:id="mathBoard" prefHeight="753.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qGenerator.qGeneratorController">
+<ScrollPane id="group-view" fx:id="mathBoard" prefHeight="697.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qGenerator.qGeneratorController">
    <content>
-      <AnchorPane id="background" fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="751.0" prefWidth="506.0" styleClass="background" stylesheets="@Stylesheets.css">
+      <AnchorPane id="background" fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="694.0" prefWidth="506.0" styleClass="background" stylesheets="@Stylesheets.css">
          <children>
             <Text fontSmoothingType="LCD" layoutX="29.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question 1:" wrappingWidth="116.6708984375">
                <font>
@@ -27,15 +27,15 @@
             <TextField fx:id="questionBox1" editable="false" layoutX="26.0" layoutY="183.0" prefHeight="31.0" prefWidth="223.0" />
             <TextField fx:id="questionBox2" editable="false" layoutX="26.0" layoutY="352.0" prefHeight="31.0" prefWidth="223.0" />
             <TextField fx:id="questionBox3" editable="false" layoutX="26.0" layoutY="517.0" prefHeight="31.0" prefWidth="223.0" />
-            <Button fx:id="showAnswerBttn" layoutX="150.0" layoutY="651.0" mnemonicParsing="false" onAction="#showAnswerController" prefHeight="33.0" prefWidth="118.0" text="Show Answer">
+            <Button fx:id="showAnswerBttn" layoutX="322.0" layoutY="639.0" mnemonicParsing="false" onAction="#showAnswerController" prefHeight="33.0" prefWidth="118.0" text="Show Answer">
                <font>
                   <Font name="Segoe UI Bold" size="15.0" />
                </font></Button>
-            <Button fx:id="resetBttn" layoutX="300.0" layoutY="652.0" mnemonicParsing="false" onAction="#resetController" prefHeight="31.0" prefWidth="123.0" text="Reset">
+            <Button fx:id="resetBttn" layoutX="26.0" layoutY="640.0" mnemonicParsing="false" onAction="#resetController" prefHeight="31.0" prefWidth="123.0" text="Reset">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font></Button>
-            <Button fx:id="generateQButton" layoutX="128.0" layoutY="93.0" mnemonicParsing="false" onAction="#generateQController" prefHeight="31.0" prefWidth="243.0" text="Generate Math Question">
+            <Button fx:id="generateQButton" layoutX="24.0" layoutY="92.0" mnemonicParsing="false" onAction="#generateQController" prefHeight="31.0" prefWidth="243.0" text="Generate Math Question">
                <font>
                   <Font name="Segoe UI Bold" size="18.0" />
                </font></Button>
@@ -57,10 +57,27 @@
             <RadioButton fx:id="radioButtonAddition" layoutX="26.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonAdditionController" text="Addition">
                <toggleGroup>
                   <ToggleGroup fx:id="mathQ" />
-               </toggleGroup></RadioButton>
-            <RadioButton fx:id="radioButtonDeduction" layoutX="138.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonDeductionController" text="Deduction" toggleGroup="$mathQ" />
-            <RadioButton fx:id="radioButtonMultiply" layoutX="259.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonMultiplyController" selected="true" text="Multiply" toggleGroup="$mathQ" />
-            <RadioButton fx:id="radioButtonDivision" layoutX="371.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonDivisionController" text="Division" toggleGroup="$mathQ" />
+               </toggleGroup>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="radioButtonDeduction" layoutX="138.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonDeductionController" text="Deduction" toggleGroup="$mathQ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="radioButtonMultiply" layoutX="259.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonMultiplyController" selected="true" text="Multiply" toggleGroup="$mathQ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="radioButtonDivision" layoutX="371.0" layoutY="29.0" mnemonicParsing="false" onAction="#radioButtonDivisionController" text="Division" toggleGroup="$mathQ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <TextField fx:id="timer" alignment="TOP_CENTER" editable="false" layoutX="300.0" layoutY="93.0" onAction="#timerController" prefHeight="33.0" prefWidth="182.0" promptText="Timer" visible="false">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </TextField>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />

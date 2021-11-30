@@ -10,7 +10,7 @@ public class qGeneratorController {
     public ScrollPane mathBoard;
     public TextField questionBox1;
     public TextField questionBox2;
-    public TextField questionBox3;
+    public TextField questionBox3, timer;
     public TextArea answerBox1;
     public TextArea answerBox2;
     public TextArea answerBox3;
@@ -153,9 +153,6 @@ public class qGeneratorController {
                 questionBox3.setText(list.get(7) + " - " + list.get(6));
             }
 
-/*            questionBox1.setText(list.get(0) + " + " + list.get(1));
-            questionBox2.setText(list.get(3) + " + " + list.get(4));
-            questionBox3.setText(list.get(6) + " + " + list.get(7));*/
 
         } else if(radioButtonAddition.isSelected()){
             additionQGenerator();
@@ -238,8 +235,26 @@ public class qGeneratorController {
                 answerBox3.setStyle("-fx-text-fill: red");
                 booleanDisplay3.setText("Wrong Answer");
             }
+            answerBox1.setEditable(false);
+            answerBox2.setEditable(false);
+            answerBox3.setEditable(false);
 
         }
+        System.out.println(questionBox1.getText());
+        System.out.println(answerBox1.getText());
+        System.out.println(correctAns1.getText());
+        System.out.println(booleanDisplay1.getText());
+        System.out.println(questionBox2.getText());
+        System.out.println(answerBox2.getText());
+        System.out.println(correctAns2.getText());
+        System.out.println(booleanDisplay2.getText());
+        System.out.println(questionBox3.getText());
+        System.out.println(answerBox3.getText());
+        System.out.println(correctAns3.getText());
+        System.out.println(booleanDisplay3.getText());
+
+
+
     }
 
 
@@ -262,6 +277,9 @@ public class qGeneratorController {
         correctAns2.setText("");
         correctAns3.setText("");
         list.clear();
+        answerBox1.setEditable(true);
+        answerBox2.setEditable(true);
+        answerBox3.setEditable(true);
     }
 
 
@@ -292,6 +310,8 @@ public class qGeneratorController {
     }
 
 
-
+    public void timerController(ActionEvent event) {
+        System.out.println("Timer has started");
+    }
 
 }
